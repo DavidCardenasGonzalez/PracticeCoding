@@ -2,7 +2,7 @@
   "name": "node-senior-challenges",
   "version": "0.1.0",
   "private": true,
-  "description": "Ejercicios avanzados de Node.js orientados a entrevistas senior y escenarios reales.",
+  "description": "Advanced Node.js exercises for senior technical interviews and real-world scenarios.",
   "type": "module",
   "packageManager": "npm@10.9.0",
   "engines": {

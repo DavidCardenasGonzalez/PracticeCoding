@@ -1,61 +1,59 @@
 # Node Senior Challenges
 
-Repositorio de práctica avanzada de Node.js para entrevistas técnicas senior y
-escenarios cercanos al trabajo real. Cada ejercicio plantea una API pequeña, una
-especificación ejecutable y problemas de diseño relacionados con asincronía,
-concurrencia, resiliencia, rendimiento y mantenibilidad.
+An advanced Node.js practice repository for senior technical interviews and
+real-world scenarios. Each exercise presents a focused API, an executable
+specification, and design problems involving asynchrony, concurrency, resilience,
+performance, and maintainability.
 
-La solución de cada reto vive aislada. La configuración y las utilidades realmente
-reutilizables permanecen en la raíz para que incorporar ejercicios no duplique
-infraestructura.
+Each challenge implementation remains isolated. Shared configuration and genuinely
+reusable utilities stay at the root, so adding challenges does not duplicate
+infrastructure.
 
-## Requisitos
+## Requirements
 
-- Node.js 22 o posterior (una versión LTS moderna)
-- npm 10 o posterior
+- Node.js 22 or later (a modern LTS release)
+- npm 10 or later
 
-## Instalación y comandos
+## Installation and commands
 
 ```bash
 npm install
-npm test                    # todas las suites, una sola ejecución
-npm run test:watch          # todas las suites en modo interactivo
-npm run test:message-queue  # solamente Message Queue
-npm run typecheck           # TypeScript estricto, sin emitir archivos
-npm run lint                # análisis estático
-npm run format              # formatea el repositorio
+npm test                    # run every suite once
+npm run test:watch          # run every suite in watch mode
+npm run test:message-queue  # run only Message Queue tests
+npm run typecheck           # strict TypeScript checking without emitting files
+npm run lint                # run static analysis
+npm run format              # format the repository
 ```
 
-Las pruebas son la especificación de los retos. En una copia recién creada es
-normal que las del ejercicio todavía no resuelto fallen con `NotImplementedError`.
+Tests are the executable specification for each challenge. In a fresh checkout, it
+is expected that tests for an unsolved exercise fail with `NotImplementedError`.
 
-## Organización
+## Layout
 
 ```text
 .
 ├── exercises/
 │   └── message-queue/
 │       ├── README.md
-│       ├── src/             # API pública, tipos y código del candidato
-│       └── tests/           # especificación aislada del ejercicio
+│       ├── src/             # public API, types, and candidate code
+│       └── tests/           # isolated exercise specification
 ├── shared/
-│   └── test-utils/          # helpers agnósticos de cualquier ejercicio
+│   └── test-utils/          # exercise-agnostic helpers
 ├── eslint.config.js
 ├── prettier.config.js
 ├── tsconfig.json
 └── vitest.config.ts
 ```
 
-## Agregar un ejercicio
+## Adding an exercise
 
-1. Crea `exercises/<nombre>/src`, `tests` y un `README.md` propio.
-2. Expón la API pública desde `src/index.ts`; no importes internals de otros retos.
-3. Coloca las pruebas como `tests/**/*.spec.ts`. Vitest las descubrirá desde la raíz.
-4. Reutiliza `shared/test-utils` solo para utilidades genéricas. La lógica particular
-   debe permanecer dentro del ejercicio.
-5. Agrega un script `test:<nombre>` que apunte al directorio de pruebas y documenta
-   cualquier decisión observable antes de exigirla en una expectativa.
+1. Create `exercises/<name>/src`, `tests`, and its own `README.md`.
+2. Export the public API from `src/index.ts`; do not import internals from another challenge.
+3. Place tests under `tests/**/*.spec.ts`. Vitest discovers them from the root.
+4. Reuse `shared/test-utils` only for generic utilities. Exercise-specific logic must stay in its exercise.
+5. Add a `test:<name>` script that targets its test directory and document every observable decision before asserting it.
 
-No se requieren npm workspaces mientras todos los retos compartan el mismo stack y
-no se publiquen como paquetes. Esta estructura permite añadirlos sin mezclar código
-o pruebas y evita configuración por paquete que todavía no aporta valor.
+npm workspaces are unnecessary while challenges share one stack and are not published
+as packages. This layout supports adding challenges without mixing code or tests and
+avoids per-package configuration that does not yet add value.
