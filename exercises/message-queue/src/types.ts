@@ -30,3 +30,12 @@ export type MessageHandler<T = unknown> = (
   message: Message<T>,
   context: MessageContext,
 ) => void | Promise<void>;
+
+export interface Subscription {
+  handler: MessageHandler;
+  concurrency: number;
+  maxRetries: number;
+  retryDelayMs: number;
+  active: boolean;
+  inFlight: number;
+}

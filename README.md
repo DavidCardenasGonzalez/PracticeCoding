@@ -1,7 +1,7 @@
-# Node Senior Challenges
+# Senior TypeScript Challenges
 
-An advanced Node.js practice repository for senior technical interviews and
-real-world scenarios. Each exercise presents a focused API, an executable
+An advanced TypeScript, Node.js, and React practice repository for senior technical
+interviews and real-world scenarios. Each exercise presents a focused API, an executable
 specification, and design problems involving asynchrony, concurrency, resilience,
 performance, and maintainability.
 
@@ -18,28 +18,39 @@ infrastructure.
 
 ```bash
 npm install
+npm run dev                 # open the visual playground at http://localhost:5173
+npm run build               # validate the production bundle
 npm test                    # run every suite once
 npm run test:watch          # run every suite in watch mode
 npm run test:message-queue  # run only Message Queue tests
+npm run test:react          # run only Async Combobox tests
+npm run test:react:watch    # solve the React challenge with fast feedback
 npm run typecheck           # strict TypeScript checking without emitting files
 npm run lint                # run static analysis
 npm run format              # format the repository
 ```
 
-Tests are the executable specification for each challenge. In a fresh checkout, it
-is expected that tests for an unsolved exercise fail with `NotImplementedError`.
+Tests are the executable specification for each challenge. In a fresh checkout, an
+unsolved exercise is expected to fail its behavioral assertions.
 
 ## Layout
 
 ```text
 .
 ├── exercises/
+│   ├── async-combobox/      # advanced React 19 challenge
+│   │   ├── README.md
+│   │   ├── src/             # public API, types, and candidate code
+│   │   └── tests/           # jsdom + Testing Library specification
 │   └── message-queue/
 │       ├── README.md
-│       ├── src/             # public API, types, and candidate code
-│       └── tests/           # isolated exercise specification
+│       ├── src/
+│       └── tests/
 ├── shared/
 │   └── test-utils/          # exercise-agnostic helpers
+├── playground/              # local visual app for the React challenge
+├── index.html
+├── vite.config.ts
 ├── eslint.config.js
 ├── prettier.config.js
 ├── tsconfig.json
