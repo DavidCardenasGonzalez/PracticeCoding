@@ -25,6 +25,11 @@ npm run test:watch          # run every suite in watch mode
 npm run test:message-queue  # run only Message Queue tests
 npm run test:react          # run only Async Combobox tests
 npm run test:react:watch    # solve the React challenge with fast feedback
+npm run test:algorithms:maps # practice Map and frequency-map problems
+npm run test:algorithms:two-pointers # practice two-pointer problems
+npm run test:algorithms:sliding-window # practice sliding-window problems
+npm run test:algorithms:stack-and-queue # practice stack and queue problems
+npm run test:algorithms:interview-sprint # run the mixed interview warm-up
 npm run typecheck           # strict TypeScript checking without emitting files
 npm run lint                # run static analysis
 npm run format              # format the repository
@@ -38,6 +43,7 @@ unsolved exercise is expected to fail its behavioral assertions.
 ```text
 .
 ├── exercises/
+│   ├── algorithms/          # progressive algorithm and data-structure practice
 │   ├── async-combobox/      # advanced React 19 challenge
 │   │   ├── README.md
 │   │   ├── src/             # public API, types, and candidate code

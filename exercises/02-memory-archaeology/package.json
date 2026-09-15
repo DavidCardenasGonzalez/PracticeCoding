@@ -1,0 +1,14 @@
+{
+  "name": "memory-archaeology",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --expose-gc src/cli.js 2000",
+    "load": "node --expose-gc src/cli.js",
+    "test": "node --test test/*.test.js"
+  }
+}
